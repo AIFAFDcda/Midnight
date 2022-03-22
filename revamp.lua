@@ -360,22 +360,22 @@ function OnChatMsg(pid, message_text)
 	local input = string.match(message_text:lower(), " (.*)")
 	if input ~= nil then
 		if input == "on" then
-			SET_FLOAT_GLOBAL(262145+29625,0)
-			SET_FLOAT_GLOBAL(262145+29626,0)
-			SET_FLOAT_GLOBAL(262145+29470,0) --Stolen from uc
-			SET_FLOAT_GLOBAL(262145+29471,0) --Stolen from uc
-			add_to_history("Admin", "Set lesters bounty cut to 0", "Revamped Recovery")
+			SET_GLOBAL.float(262145+29625,0)
+			SET_GLOBAL.float(262145+29626,0)
+			SET_GLOBAL.float(262145+29470,0) --Stolen from uc
+			SET_GLOBAL.float(262145+29471,0) --Stolen from uc
+			add_to_history("Admin", "Set Cayo fee to 0", "Revamped Recovery")
 		elseif input == "off" then
-			SET_FLOAT_GLOBAL(262145+29625, -0.1)
-			SET_FLOAT_GLOBAL(262145+29626, -0.02)
-			SET_FLOAT_GLOBAL(262145+29470, 0) --Stolen from uc
-			SET_FLOAT_GLOBAL(262145+29471, 0) --Stolen from uc
-			add_to_history("Admin", "Set lesters bounty cut to 1000", "Revamped Recovery")
+			SET_GLOBAL.float(262145+29625, -0.1)
+			SET_GLOBAL.float(262145+29626, -0.02)
+			SET_GLOBAL.float(262145+29470, 0) --Stolen from uc
+			SET_GLOBAL.float(262145+29471, 0) --Stolen from uc
+			add_to_history("Admin", "Set Cayo fee to default", "Revamped Recovery")
 		else
-			add_to_history("Admin", "You must specify on or off example, !bountycut 750k", "Revamped Recovery")
+			add_to_history("Admin", "You must specify on or off example, !cayofee on", "Revamped Recovery")
 		end
 		else
-			add_to_history("Admin", "You must specify 500k or 750k example, !bountycut 750k", "Revamped Recovery")
+			add_to_history("Admin", "You must specify on or off example, !cayofee on", "Revamped Recovery")
 		end
 	return
 	end
