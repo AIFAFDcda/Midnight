@@ -88,6 +88,31 @@ function OnChatMsg(pid, message_text)
 	end)
 	return
 	end
+
+	if message_text:lower():find("^!abilitiesmax") ~= nil then
+	system.fiber(function(callback)
+
+	local statTable = { {"SPECIAL_ABILITY", 100}, {"STAMINA", 100}, {"STRENGTH", 100}, {"LUNG_CAPACITY", 100}, {"WHEELIE_ABILITY", 100}, {"FLYING_ABILITY", 100}, {"SHOOTING_ABILITY", 100}, {"SCRIPT_INCREASE_STAM", 100}, {"SCRIPT_INCREASE_STRN", 100}, {"SCRIPT_INCREASE_LUNG", 100}, {"SCRIPT_INCREASE_DRIV", 100}, {"SCRIPT_INCREASE_FLY", 100}, {"SCRIPT_INCREASE_SHO", 100}, {"SCRIPT_INCREASE_STL", 100}, {"SCRIPT_INCREASE_MECH", 100}, 
+			    {"CHAR_ABILITY_1_UNLCK", 1}, {"CHAR_FM_ABILITY_1_UNLCK", 1}, --idk about these didnt check freemode
+			    {"CHAR_ABILITY_2_UNLCK", 1}, {"CHAR_FM_ABILITY_2_UNLCK", 1}, --idk about these didnt check freemode
+			    {"CHAR_ABILITY_3_UNLCK", 1}, {"CHAR_FM_ABILITY_3_UNLCK", 1}, --idk about these didnt check freemode
+	}
+		if set_statTable(statTable) then
+			add_to_history("Admin", "Maxed Abilities", "Revamped Recovery")
+		end
+	end)
+	return
+	end
+	if message_text:lower():find("^!clubmax") ~= nil then
+	system.fiber(function(callback)
+
+	local statTable = { {"CLUB_POPULARITY", 1000}, }
+		if set_statTable(statTable) then
+			add_to_history("Admin", "Maxed out Night Club Popularity "Revamped Recovery")
+		end
+	end)
+	return
+	end
 	if message_text:lower():find("^!unlockmisc1") ~= nil then
 	local input = string.match(message_text:lower(), " (.*)")
 	system.fiber(function(callback)
@@ -192,6 +217,41 @@ function OnChatMsg(pid, message_text)
 			end
 		else
 			add_to_history("Admin", "You must specify on or off example, !unlockmisc1 on", "Revamped Recovery")
+		end
+	end)
+	return
+	end
+
+	if message_text:lower():find("^!nightclubprodtime") ~= nil then
+	local input = string.match(message_text:lower(), " (.*)")
+	system.fiber(function(callback)
+		if input ~= nil then
+			if input == "on" then
+				SET_GLOBAL.float(262145+24141, 0.1)
+				SET_GLOBAL.int(262145+24134, 1)
+				SET_GLOBAL.int(262145+24135, 1)
+				SET_GLOBAL.int(262145+24136, 1)
+				SET_GLOBAL.int(262145+24137, 1)
+				SET_GLOBAL.int(262145+24138, 1)
+				SET_GLOBAL.int(262145+24139, 1)
+				SET_GLOBAL.int(262145+24140, 1)
+				add_to_history("Admin", "Removed Nightclub produce time", "Revamped Recovery")
+			elseif input == "off" then
+				SET_GLOBAL.float(262145+24141, 0.5)
+				SET_GLOBAL.int(262145+24134, 4800000)
+				SET_GLOBAL.int(262145+24135, 14400000)
+				SET_GLOBAL.int(262145+24136, 7200000)
+				SET_GLOBAL.int(262145+24137, 2400000)
+				SET_GLOBAL.int(262145+24138, 1800000)
+				SET_GLOBAL.int(262145+24139, 3600000)
+				SET_GLOBAL.int(262145+24140, 8400000)
+				add_to_history("Admin", "Reset Nightclub produce time Default", "Revamped Recovery")
+			
+			else
+				add_to_history("Admin", "You must specify on or off example, !nightclubprodtime on", "Revamped Recovery")
+			end
+		else
+				add_to_history("Admin", "You must specify on or off example, !nightclubprodtime on", "Revamped Recovery")
 		end
 	end)
 	return
