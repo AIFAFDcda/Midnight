@@ -108,7 +108,7 @@ function OnChatMsg(pid, message_text)
 
 	local statTable = { {"CLUB_POPULARITY", 1000}, }
 		if set_statTable(statTable) then
-			add_to_history("Admin", "Maxed out Night Club Popularity "Revamped Recovery")
+			add_to_history("Admin", "Maxed out Night Club Popularity", "Revamped Recovery")
 		end
 	end)
 	return
