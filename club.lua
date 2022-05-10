@@ -1,4 +1,4 @@
---Updated to 1.59 by bookfdafaa7b
+--Updated to 1.59 by Barrarar
 
 -- originally by hotline
 -- github.com/hotline1337
