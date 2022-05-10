@@ -1,4 +1,4 @@
---Updated to 1.59 by bookfdafaa7b full credits goes to:
+--Updated to 1.59 by bookfdafaa7b
 
 -- originally by hotline
 -- github.com/hotline1337
